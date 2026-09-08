@@ -347,12 +347,12 @@ const assetData = {
       stage: 'Consideration', 
       audience: 'Active follower', 
       usage: 'Organic + Retargeting',
-      design: 'Stay Tuned ..',
+      design: 'ﻓﻲ اﻟﻌﺼﺮ اﻟﺤﺎﻟﻲ .. اﻟﻠﻲ ﺑﻴﻌﺮف ﻳﻮﺻﻞ ﻟﻠﻨﺎس ﻫﻮ اﻟﻠﻲ ﺑﻴﻜﺴﺐ\nف ﻟﻮ ﻋﺎﻳﺰ ﺗﺒﻨﻲ ﺑﻴﺰﻧﺲ ﺣﻘﻴﻘﻲ ! ﻻزم ﺗﺒﻨﻲ " ﺑﺮاﻧﺪ " ﻓﻲ ﻋﻘﻮل اﻟﻨﺎس اﻷول .\nاﻋﻤﻞ ﻓﻮﻟﻮ ﻋﺸﺎن ﺗﻌﺮف أﺳﺮار اﻟﺒﻴﺰﻧﺲ اﻟﻠﻲ ﻣﺒﻴﻘﻮﻟﻮﻫﺎش ﻟﻴﻚ ﻓﻲ اﻟﻜﺘﺐ.',
       caption: '[Caption that opens a discussion in the comments]',
       note: '',
       hasCustomLayout: true,
-      objective: 'Awareness',
-      reelLink: 'https://www.instagram.com/reels/'
+      objective: 'Educational',
+      scriptLink: 'https://docs.google.com/document/d/1EVPHiatS6hquICoNSvr5MhBAWpA_Ac_6ka7fUT0RDYU/edit?tab=t.0'
     },
   ],
   video: [
