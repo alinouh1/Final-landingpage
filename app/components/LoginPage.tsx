@@ -1,7 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa6';
+
+const IconArrowRight = ({ className = "", size = 16 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"></line>
+    <polyline points="12 5 19 12 12 19"></polyline>
+  </svg>
+);
 
 interface LoginPageProps {
   onLogin: () => void;
@@ -79,7 +85,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
               ) : (
                 <>
                   <span>دخول</span>
-                  <FaArrowRight className="button-icon" />
+                  <IconArrowRight className="button-icon" />
                 </>
               )}
             </button>

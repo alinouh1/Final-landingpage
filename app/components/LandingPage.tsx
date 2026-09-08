@@ -1,40 +1,274 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  FaGlobe, 
-  FaLocationDot, 
-  FaCalendarDays, 
-  FaBars, 
-  FaXmark, 
-  FaCheck, 
-  FaCompass, 
-  FaFolder, 
-  FaChevronDown, 
-  FaCrosshairs, 
-  FaUsers, 
-  FaRocket, 
-  FaCalendarDays as FaCalendar, 
-  FaLayerGroup, 
-  FaImage, 
-  FaImages, 
-  FaFilm, 
-  FaChartLine, 
-  FaBullhorn, 
-  FaFilter, 
-  FaChartSimple, 
-  FaUserTie, 
-  FaListCheck, 
-  FaHandshake, 
-  FaFolderOpen, 
-  FaCircle, 
-  FaUser, 
-  FaBrain,
-  FaCopy,
-  FaPenNib,
-  FaPeopleGroup,
-  FaPeopleArrows
-} from 'react-icons/fa6';
+
+// Custom SVG Icons
+const IconGlobe = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </svg>
+);
+
+const IconLocation = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+);
+
+const IconCalendar = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <line x1="16" y1="2" x2="16" y2="6"></line>
+    <line x1="8" y1="2" x2="8" y2="6"></line>
+    <line x1="3" y1="10" x2="21" y2="10"></line>
+  </svg>
+);
+
+const IconBars = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+);
+
+const IconX = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
+
+const IconCheck = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+);
+
+const IconCompass = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+  </svg>
+);
+
+const IconFolder = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+  </svg>
+);
+
+const IconChevronDown = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
+
+const IconCrosshairs = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="22" y1="12" x2="18" y2="12"></line>
+    <line x1="6" y1="12" x2="2" y2="12"></line>
+    <line x1="12" y1="6" x2="12" y2="2"></line>
+    <line x1="12" y1="22" x2="12" y2="18"></line>
+  </svg>
+);
+
+const IconUsers = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="4"></circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+);
+
+const IconRocket = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+    <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+  </svg>
+);
+
+const IconLayerGroup = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+    <polyline points="2 17 12 22 22 17"></polyline>
+    <polyline points="2 12 12 17 22 12"></polyline>
+  </svg>
+);
+
+const IconImage = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+    <polyline points="21 15 16 10 5 21"></polyline>
+  </svg>
+);
+
+const IconImages = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+    <polyline points="21 15 16 10 5 21"></polyline>
+    <line x1="17" y1="3" x2="17" y2="8"></line>
+    <line x1="3" y1="17" x2="8" y2="17"></line>
+  </svg>
+);
+
+const IconFilm = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+    <line x1="7" y1="2" x2="7" y2="22"></line>
+    <line x1="17" y1="2" x2="17" y2="22"></line>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <line x1="2" y1="7" x2="7" y2="7"></line>
+    <line x1="2" y1="17" x2="7" y2="17"></line>
+    <line x1="17" y1="17" x2="22" y2="17"></line>
+    <line x1="17" y1="7" x2="22" y2="7"></line>
+  </svg>
+);
+
+const IconChartLine = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+  </svg>
+);
+
+const IconBullhorn = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+  </svg>
+);
+
+const IconFilter = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+  </svg>
+);
+
+const IconChartSimple = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"></line>
+    <line x1="12" y1="20" x2="12" y2="4"></line>
+    <line x1="6" y1="20" x2="6" y2="14"></line>
+  </svg>
+);
+
+const IconUserTie = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+    <path d="M12 11v2"></path>
+    <path d="M10 13h4"></path>
+  </svg>
+);
+
+const IconListCheck = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"></line>
+    <line x1="8" y1="12" x2="21" y2="12"></line>
+    <line x1="8" y1="18" x2="21" y2="18"></line>
+    <polyline points="3 6 5 8 9 4"></polyline>
+    <polyline points="3 12 5 14 9 10"></polyline>
+    <polyline points="3 18 5 20 9 16"></polyline>
+  </svg>
+);
+
+const IconHandshake = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10.5 17a2.5 2.5 0 0 0 2.5 2.5h2.84l2.28-2.28"></path>
+    <path d="M17.5 15.5a2.5 2.5 0 0 0 2.5-2.5v-2.84"></path>
+    <path d="M21 8.5a2.5 2.5 0 0 0-2.5-2.5h-2.84"></path>
+    <path d="M15.5 5.5a2.5 2.5 0 0 0-2.5 2.5v2.84"></path>
+    <path d="M8.5 11.5a2.5 2.5 0 0 0-2.5-2.5H3.16"></path>
+    <path d="M3 15.5a2.5 2.5 0 0 0 2.5 2.5h2.84"></path>
+    <path d="M6.5 18.5a2.5 2.5 0 0 0 2.5-2.5v-2.84"></path>
+  </svg>
+);
+
+const IconFolderOpen = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+    <path d="M2 10h20"></path>
+  </svg>
+);
+
+const IconCircle = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+  </svg>
+);
+
+const IconUser = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+);
+
+const IconBrain = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+  </svg>
+);
+
+const IconCopy = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+);
+
+const IconPenNib = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+    <path d="M2 2l7.586 7.586"></path>
+    <circle cx="11" cy="11" r="2"></circle>
+  </svg>
+);
+
+const IconPeopleGroup = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+    <circle cx="9" cy="7" r="4"></circle>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+);
+
+const IconInstagram = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const IconCheckCircle = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+  </svg>
+);
+
+const IconFileText = ({ className = "", size = 20 }: { className?: string; size?: number }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+    <polyline points="14 2 14 8 20 8"></polyline>
+    <line x1="16" y1="13" x2="8" y2="13"></line>
+    <line x1="16" y1="17" x2="8" y2="17"></line>
+    <polyline points="10 9 9 9 8 9"></polyline>
+  </svg>
+);
 
 const ICON_COPY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 const ICON_CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
@@ -286,7 +520,7 @@ const assetData = {
       type: 'Carousel 01', 
       date: 'W1',
       objective: 'Awareness & Educational',
-      design: 'slide 1: إزاي توصل من 10 آﻻف لـ 100 ألف متابع\nslide 2: ﺑﺠﺪ ! ﻫﻤﺎ ﻗﺎﻟﻮﻟﻚ إن الموﻀﻮع ﺑﺎﻟﺒﺴﺎﻃﺔ دي؟\nslide 3: اﻟﺤﻘﻴﻘﺔ إن دي ﺧﺪﻋﺔ ﻛﺒﻴﺮة . ﻟﻮ ﻛﺎﻧﺖ ﺑﺎﻟﺴﻬﻮﻟﺔ دي ، ﻛﺎن ﻛﻞ اﻟﻠﻲ وعنده درع اﻟﻤﻠﻴﻮن\n" إﻧﻔﻠﻮﻧﺴﺮ ﻣﺎﺷﻲ ﻓﻲ اﻟﺸﺎرع دﻟﻮﻗﺘﻲ ﺑﻘﻰ\nslide 4: ﺷﺮﻛﺎت اﻟﻤﺎرﻛﺘﻴﻨﺞ ﺑﺘﺒﻴﻌﻠﻚ اﻟﻮﻫﻢ ﺗﺤﺖ ﻣﺴﻤﻰ " اﻟﻨﻤﻮ اﻟﺴﺮﻳﻊ " ﺑﻴﻮﻫﻤﻮك إن ﻓﻴﻪ " زرار ﺳﺤﺮي " أو " ﺗﺮﻳﻜﺎﻳﺔ ﻣﻌﻴﻨﺔ " ﻫﺘﺨﻠﻲ ﺣﺴﺎﺑﻚ ﻳﻨﻔﺠﺮ ﻓﻲ أﺳﺒﻮع\nslide 5: اﻟﺤﻘﻴﻘﺔ اﻟﻤﺮة ؟ اﻟﻤﺘﺎﺑﻌﻴﻦ اﻟﻠﻲ ﺑﻴﻴﺠﻮا ﺑﻀﻐﻄﺔ زرار ﻫﻤﺎ اﻟﻠﻲ ﺑﻴﺪﻓﻨﻮا ﺣﺴﺎﺑﻚ ﻟﻸﺑﺪ . اﻟﺨﻮارزﻣﻴﺎت ﻣﺶ ﻏﺒﻴﺔ؛ ﻫﻲ ﺑﺘﺪور ﻋﲆ ﺗﻔﺎﻋﻞ ﺣﻘﻴﻘﻲ ﻣﺶ أرﻗﺎم ﻣﻴﺘﺔ\nslide 6: ﻟﻮ ﻋﺎﻳﺰ ﺗﻜﺒﺮ ﺑﺠﺪ وﺑﺸﻜﻞ ﻣﻨﻄﻘﻲ ؟ ف اﻟﻤﻌﺎدﻟﺔ ﺑﺴﻴﻄﺔ :\nقيمة حقيقية بتحل مشكلة ✅\nاستمرار مرضي لجمهورك ✅\nفهم دقيق لللي جمهورك محتاجه فعلاً مش اللي أنت عايز تقوله✅\nslide 7:\n   لو عايز تبني إمبراطورية مش مجرد رقم على الشاشة، بطّل تدور على السهل .. اعمل فولو لو عايز تعرف إزاي تبني جمهور حقيقي بيشتري منك مش بس ﺑﻴﺘﻔﺮج ﻋﻠﻴﻚ',
+      design: 'slide 1: إزاي توصل من 10 آﻻف لـ 100 ألف متابع\nslide 2: ﺑﺠﺪ ! ﻫﻤﺎ ﻗﺎﻟﻮﻟﻚ إن الموﻀﻮع ﺑﺎﻟﺒﺴﺎﻃﺔ دي؟\nslide 3: اﻟﺤﻘﻴﻘﺔ إن دي ﺧﺪﻋﺔ ﻛﺒﻴﺮة . ﻟﻮ ﻛﺎﻧﺖ ﺑﺎﻟﺴﻬﻮﻟﺔ دي ، ﻛﺎن ﻛﻞ اﻟﻠﻲ وعنده درع اﻟﻤﻠﻴﻮن\n" إﻧﻔﻠﻮﻧﺴﺮ ﻣﺎﺷﻲ ﻓﻲ اﻟﺸﺎرع دﻟﻮﻗﺘﻲ ﺑﻘﻰ\nslide 4: ﺷﺮﻛﺎت اﻟﻤﺎرﻛﺘﻴﻨﺞ ﺑﺘﺒﻴﻌﻠﻚ اﻟﻮﻫﻢ ﺗﺤﺖ ﻣﺴﻤﻰ " اﻟﻨﻤﻮ اﻟﺴﺮﻳﻊ " ﺑﻴﻮﻫﻤﻮك إن ﻓﻴﻪ " زرار ﺳﺤﺮي " أو " ﺗﺮﻳﻜﺎﻳﺔ ﻣﻌﻴﻨﺔ " ﻫﺘﺨﻠﻲ ﺣﺴﺎﺑﻚ ﻳﻨﻔﺠﺮ ﻓﻲ أﺳﺒﻮع\nslide 5: اﻟﺤﻘﻴﻘﺔ اﻟﻤﺮة ؟ اﻟﻤﺘﺎﺑﻌﻴﻦ اﻟﻠﻲ ﺑﻴﻴﺠﻮا ﺑﻀﻐﻄﺔ زرار ﻫﻤﺎ اﻟﻠﻲ ﺑﻴﺪﻓﻨﻮا ﺣﺴﺎﺑﻚ ﻟﻸﺑﺪ . اﻟﺨﻮارزﻣﻴﺎت ﻣﺶ ﻏﺒﻴﺔ؛ ﻫﻲ ﺑﺘﺪور ﻋﲆ ﺗﻔﺎﻋﻞ ﺣﻘﻴﻘﻲ ﻣﺶ أرﻗﺎم ﻣﻴﺘﺔ\nslide 6: ﻟﻮ ﻋﺎﻳﺰ ﺗﻜﺒﺮ ﺑﺠﺪ وﺑﺸﻜﻞ ﻣﻨﻄﻘﻲ ؟ ف اﻟﻤﻌﺎدﻟﺔ ﺑﺴﻴﻄﺔ :\nقيمة حقيقية بتحل مشكلة ✓\nاستمرار مرضي لجمهورك ✓\nفهم دقيق لللي جمهورك محتاجه فعلاً مش اللي أنت عايز تقوله✓\nslide 7:\n   لو عايز تبني إمبراطورية مش مجرد رقم على الشاشة، بطّل تدور على السهل .. اعمل فولو لو عايز تعرف إزاي تبني جمهور حقيقي بيشتري منك مش بس ﺑﻴﺘﻔﺮج ﻋﻠﻴﻚ',
       note: '[Internal note: client approves the copy before design starts]',
       hasCustomLayout: true 
     },
@@ -434,30 +668,30 @@ const checklistData = [
 
 function getIcon(iconName: string) {
   const iconMap: Record<string, any> = {
-    'fa-compass': FaCompass,
-    'fa-folder': FaFolder,
-    'fa-crosshairs': FaCrosshairs,
-    'fa-users': FaUsers,
-    'fa-rocket': FaRocket,
-    'fa-calendar-days': FaCalendar,
-    'fa-layer-group': FaLayerGroup,
-    'fa-image': FaImage,
-    'fa-images': FaImages,
-    'fa-film': FaFilm,
-    'fa-chart-line': FaChartLine,
-    'fa-bullhorn': FaBullhorn,
-    'fa-filter': FaFilter,
-    'fa-chart-simple': FaChartSimple,
-    'fa-user-tie': FaUserTie,
-    'fa-list-check': FaListCheck,
-    'fa-handshake': FaHandshake,
-    'fa-folder-open': FaFolderOpen,
-    'fa-circle': FaCircle,
-    'fa-pen-nib': FaPenNib,
-    'fa-people-group': FaPeopleGroup,
-    'fa-people-arrows': FaUsers,
+    'fa-compass': IconCompass,
+    'fa-folder': IconFolder,
+    'fa-crosshairs': IconCrosshairs,
+    'fa-users': IconUsers,
+    'fa-rocket': IconRocket,
+    'fa-calendar-days': IconCalendar,
+    'fa-layer-group': IconLayerGroup,
+    'fa-image': IconImage,
+    'fa-images': IconImages,
+    'fa-film': IconFilm,
+    'fa-chart-line': IconChartLine,
+    'fa-bullhorn': IconBullhorn,
+    'fa-filter': IconFilter,
+    'fa-chart-simple': IconChartSimple,
+    'fa-user-tie': IconUserTie,
+    'fa-list-check': IconListCheck,
+    'fa-handshake': IconHandshake,
+    'fa-folder-open': IconFolderOpen,
+    'fa-circle': IconCircle,
+    'fa-pen-nib': IconPenNib,
+    'fa-people-group': IconPeopleGroup,
+    'fa-people-arrows': IconUsers,
   };
-  return iconMap[iconName] || FaCircle;
+  return iconMap[iconName] || IconCircle;
 }
 
 function copyText(text: string, btn: HTMLButtonElement, doneLabel: string) {
@@ -508,6 +742,13 @@ export default function LandingPage() {
   const [activePillar, setActivePillar] = useState(0);
   const [activeTovSlide, setActiveTovSlide] = useState(0);
   const [activeAsset, setActiveAsset] = useState({ statics: 0, carousels: 0, reels: 0 });
+  const [expandedChapters, setExpandedChapters] = useState<{ [key: string]: boolean }>({
+    'foundation': true,
+    'launch': true,
+    'content': true,
+    'ads': true,
+    'team': true
+  });
   
   const sidebarRef = useRef<HTMLDivElement>(null);
   const pillarsScrollRef = useRef<HTMLDivElement>(null);
@@ -520,6 +761,14 @@ export default function LandingPage() {
 
   const closeSidebar = () => {
     setSidebarOpen(false);
+  };
+
+  const toggleChapter = (chapterKey: string) => {
+    console.log('Toggling chapter:', chapterKey, 'Current state:', expandedChapters[chapterKey]);
+    setExpandedChapters(prev => ({
+      ...prev,
+      [chapterKey]: !prev[chapterKey]
+    }));
   };
 
   const scrollToSection = (id: string) => {
@@ -645,7 +894,7 @@ export default function LandingPage() {
           type="button"
           aria-label="Close menu"
         >
-          <FaXmark />
+          <IconX />
         </button>
       </div>
       <div className="sidebar-inner" id="sidebar">
@@ -663,7 +912,7 @@ export default function LandingPage() {
                 {React.createElement(getIcon(group.icon), { className: 'title-icon' })}
                 <span>{group.title}</span>
               </span>
-              <FaChevronDown className="chevron" />
+              <IconChevronDown className="chevron" />
             </button>
             <div className="sidebar-group-body">
               {group.items.map((item) => (
@@ -698,20 +947,6 @@ export default function LandingPage() {
         ))}
       </div>
     </aside>
-  );
-
-  const renderMobileNav = () => (
-    <div className="mobile-nav" id="mobileNav">
-      {chapters.flatMap(g => g.items).map((item) => (
-        <button
-          key={item.id}
-          className={activeSection === item.id ? 'active' : ''}
-          onClick={() => scrollToSection(item.id)}
-        >
-          {item.num} {item.label}
-        </button>
-      ))}
-    </div>
   );
 
   const renderPillars = () => (
@@ -949,7 +1184,16 @@ export default function LandingPage() {
                               </button>
                             </div>
                             <div className="asset-text-body">
-                              {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                              {item.design.split('\n').map((l: string, i: number) => (
+                                <p key={i}>
+                                  {l.includes('✓') ? (
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                      <IconCheckCircle size={14} />
+                                      {l.replace('✓', '').trim()}
+                                    </span>
+                                  ) : l}
+                                </p>
+                              ))}
                             </div>
                           </div>
                         </>
@@ -974,7 +1218,16 @@ export default function LandingPage() {
                               </button>
                             </div>
                             <div className="asset-text-body">
-                              {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                              {item.design.split('\n').map((l: string, i: number) => (
+                                <p key={i}>
+                                  {l.includes('✓') ? (
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                      <IconCheckCircle size={14} />
+                                      {l.replace('✓', '').trim()}
+                                    </span>
+                                  ) : l}
+                                </p>
+                              ))}
                             </div>
                           </div>
                           {item.scriptLink && (
@@ -989,7 +1242,7 @@ export default function LandingPage() {
                                   rel="noopener noreferrer"
                                   className="reel-link-button"
                                 >
-                                  📄 Open Google Docs Script
+                                  <IconFileText size={16} /> Open Google Docs Script
                                 </a>
                               </div>
                             </div>
@@ -1006,7 +1259,7 @@ export default function LandingPage() {
                                   rel="noopener noreferrer"
                                   className="reel-link-button"
                                 >
-                                  📱 Open Instagram Reel
+                                  <IconInstagram size={16} /> Open Instagram Reel
                                 </a>
                               </div>
                             </div>
@@ -1035,7 +1288,16 @@ export default function LandingPage() {
                           </button>
                         </div>
                         <div className="asset-text-body">
-                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                          {item.design.split('\n').map((l: string, i: number) => (
+                            <p key={i}>
+                              {l.includes('✓') ? (
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                  <IconCheckCircle size={14} />
+                                  {l.replace('✓', '').trim()}
+                                </span>
+                              ) : l}
+                            </p>
+                          ))}
                         </div>
                       </div>
                     </>
@@ -1097,7 +1359,16 @@ export default function LandingPage() {
                           </button>
                         </div>
                         <div className="asset-text-body">
-                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                          {item.design.split('\n').map((l: string, i: number) => (
+                            <p key={i}>
+                              {l.includes('✓') ? (
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                  <IconCheckCircle size={14} />
+                                  {l.replace('✓', '').trim()}
+                                </span>
+                              ) : l}
+                            </p>
+                          ))}
                         </div>
                       </div>
                     </>
@@ -1134,7 +1405,16 @@ export default function LandingPage() {
                           </button>
                         </div>
                         <div className="asset-text-body">
-                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                          {item.design.split('\n').map((l: string, i: number) => (
+                            <p key={i}>
+                              {l.includes('✓') ? (
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                  <IconCheckCircle size={14} />
+                                  {l.replace('✓', '').trim()}
+                                </span>
+                              ) : l}
+                            </p>
+                          ))}
                         </div>
                       </div>
                       <div className="asset-text-box">
@@ -1177,13 +1457,19 @@ export default function LandingPage() {
             aria-expanded={sidebarOpen}
             aria-controls="sidebarPanel"
           >
-            {sidebarOpen ? <FaXmark /> : <FaBars />}
+            {sidebarOpen ? <IconX /> : <IconBars />}
           </button>
           <button className="btn-pill light" onClick={() => window.print()}>Print</button>
           <button className="btn-pill dark" onClick={() => window.print()}>PDF</button>
         </div>
         <div className="topbar-right">
-          <img src="/logo.svg" alt="Growth Station Logo" className="logo-image" />
+          <img 
+            src="/logo.svg" 
+            alt="Growth Station Logo" 
+            className="logo-image" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
       </div>
 
@@ -1200,9 +1486,9 @@ export default function LandingPage() {
           <div className="hero-eyebrow">GROWTH STATION · LAUNCH PLAYBOOK</div>
           <h1 className="hero-title">Growth Station — The Complete Launch Playbook, From Strategy to the Last Ready-to-Publish Post</h1>
           <div className="hero-meta">
-            <a href="https://growthstationco.com"><span className="hero-chip"><FaGlobe /> [growthstation.com]</span></a>
-            <span className="hero-chip"><FaLocationDot /> Cairo</span>
-            <span className="hero-chip"><FaCalendarDays /> [Launch date]</span>
+            <a href="https://growthstationco.com"><span className="hero-chip"><IconGlobe /> [growthstation.com]</span></a>
+            <span className="hero-chip"><IconLocation /> Cairo</span>
+            <span className="hero-chip"><IconCalendar /> [Launch date]</span>
           </div>
           <button 
             className="hero-cta" 
@@ -1214,14 +1500,19 @@ export default function LandingPage() {
       </section>
 
       <div className="page-wrap">
-        {renderMobileNav()}
-
         <div className="layout">
           <div className="content" id="content">
             {/* CHAPTER 01 — FOUNDATION */}
-            <div className="chapter-title">01–03 · Foundation & Strategy</div>
+            <div className="chapter-title">
+              <span className="chapter-toggle" onClick={() => toggleChapter('foundation')} style={{ cursor: 'pointer', display: 'inline-block', marginRight: '8px' }}>
+                {expandedChapters.foundation ? '▼' : '▶'}
+              </span>
+              <span>01–03 · Foundation & Strategy</span>
+            </div>
 
-            <section className="card-section" id="positioning">
+            {expandedChapters.foundation && (
+              <>
+                <section className="card-section" id="positioning">
               <div className="section-header">
                 <div className="section-num">01</div>
                 <div className="section-heading">
@@ -1237,9 +1528,9 @@ export default function LandingPage() {
                 </div>
                 <div className="about-pull">We exist to bridge the gap between agencies that only execute and the kind of strategic marketing businesses in Egypt and the Gulf truly need to grow, scale, and lead.</div>
                 <div className="about-facts">
-                  <span className="about-fact"><FaLocationDot /> Nasr City, Cairo</span>
-                  <span className="about-fact"><FaCrosshairs /> SMEs &amp; ambitious startups</span>
-                  <span className="about-fact"><FaGlobe /> Egypt &amp; the GCC region</span>
+                  <span className="about-fact"><IconLocation /> Nasr City, Cairo</span>
+                  <span className="about-fact"><IconCrosshairs /> SMEs &amp; ambitious startups</span>
+                  <span className="about-fact"><IconGlobe /> Egypt &amp; the GCC region</span>
                 </div>
               </div>
 
@@ -1253,10 +1544,10 @@ export default function LandingPage() {
                 </div>
                 <div className="subblock-label">Key Differentiators:</div>
                 <div className="diff-list">
-                  <div className="diff-item"><span className="tick"><FaCheck /></span><span><strong>Strategy-driven approach:</strong> every campaign starts with a tailored growth plan.</span></div>
-                  <div className="diff-item"><span className="tick"><FaCheck /></span><span>Focus on measurable outcomes, not vanity metrics.</span></div>
-                  <div className="diff-item"><span className="tick"><FaCheck /></span><span>Expertise in both local and regional markets (Egypt + GCC).</span></div>
-                  <div className="diff-item"><span className="tick"><FaCheck /></span><span>Emphasis on building long-term client partnerships over short-term engagements.</span></div>
+                  <div className="diff-item"><span className="tick"><IconCheck /></span><span><strong>Strategy-driven approach:</strong> every campaign starts with a tailored growth plan.</span></div>
+                  <div className="diff-item"><span className="tick"><IconCheck /></span><span>Focus on measurable outcomes, not vanity metrics.</span></div>
+                  <div className="diff-item"><span className="tick"><IconCheck /></span><span>Expertise in both local and regional markets (Egypt + GCC).</span></div>
+                  <div className="diff-item"><span className="tick"><IconCheck /></span><span>Emphasis on building long-term client partnerships over short-term engagements.</span></div>
                 </div>
               </div>
 
@@ -1301,7 +1592,7 @@ export default function LandingPage() {
 
                 <div className="audience-grid">
                   <div className="audience-card">
-                    <div className="audience-card-head"><span className="icon"><FaUser /></span><span>Demographics</span></div>
+                    <div className="audience-card-head"><span className="icon"><IconUser /></span><span>Demographics</span></div>
                     <div className="aud-row"><span className="aud-label">Age</span><span className="aud-value">25 – 45 years</span></div>
                     <div className="aud-row"><span className="aud-label">Gender</span><span className="aud-value">Male &amp; Female</span></div>
                     <div className="aud-row"><span className="aud-label">Education</span><span className="aud-value">University graduates or higher</span></div>
@@ -1312,7 +1603,7 @@ export default function LandingPage() {
                   </div>
 
                   <div className="audience-card">
-                    <div className="audience-card-head"><span className="icon"><FaBrain /></span><span>Psychographics</span></div>
+                    <div className="audience-card-head"><span className="icon"><IconBrain /></span><span>Psychographics</span></div>
                     <div className="aud-row"><span className="aud-label">Mindset</span><span className="aud-value">Growth-oriented, ambitious, results-driven</span></div>
                     <div className="aud-row"><span className="aud-label">Core Values</span><span className="aud-value"><ul><li>Business scalability and revenue growth</li><li>Strong brand presence</li><li>Professionalism and credibility</li></ul></span></div>
                     <div className="aud-row"><span className="aud-label">Interests</span><span className="aud-value"><ul><li>Business development</li><li>Marketing trends and strategies</li><li>Expanding market reach beyond local borders</li></ul></span></div>
@@ -1362,11 +1653,20 @@ export default function LandingPage() {
                 {renderTovSlides()}
               </div>
             </section>
+            </>
+            )}
 
             {/* CHAPTER 02 — LAUNCH PLAN */}
-            <div className="chapter-title">04 · Launch Plan</div>
+            <div className="chapter-title">
+              <span className="chapter-toggle" onClick={() => toggleChapter('launch')} style={{ cursor: 'pointer', display: 'inline-block', marginRight: '8px' }}>
+                {expandedChapters.launch ? '▼' : '▶'}
+              </span>
+              <span>04 · Launch Plan</span>
+            </div>
 
-            <section className="card-section" id="timeline">
+            {expandedChapters.launch && (
+              <>
+                <section className="card-section" id="timeline">
               <div className="section-header">
                 <div className="section-num">04</div>
                 <div className="section-heading">
@@ -1387,11 +1687,20 @@ export default function LandingPage() {
                 </table>
               </div>
             </section>
+            </>
+            )}
 
             {/* CHAPTER 03 — CONTENT */}
-            <div className="chapter-title">05–08 · Ready-to-Execute Content</div>
+            <div className="chapter-title">
+              <span className="chapter-toggle" onClick={() => toggleChapter('content')} style={{ cursor: 'pointer', display: 'inline-block', marginRight: '8px' }}>
+                {expandedChapters.content ? '▼' : '▶'}
+              </span>
+              <span>05–08 · Ready-to-Execute Content</span>
+            </div>
 
-            <section className="card-section" id="statics">
+            {expandedChapters.content && (
+              <>
+                <section className="card-section" id="statics">
               <div className="section-header">
                 <div className="section-num">05</div>
                 <div className="section-heading">
@@ -1423,11 +1732,20 @@ export default function LandingPage() {
               </div>
               {renderAssetChapter('reels', assetData.reels)}
             </section>
+            </>
+            )}
 
             {/* CHAPTER 04 — PERFORMANCE */}
-            <div className="chapter-title">09–11 · Ads & Performance</div>
+            <div className="chapter-title">
+              <span className="chapter-toggle" onClick={() => toggleChapter('ads')} style={{ cursor: 'pointer', display: 'inline-block', marginRight: '8px' }}>
+                {expandedChapters.ads ? '▼' : '▶'}
+              </span>
+              <span>09–11 · Ads & Performance</span>
+            </div>
 
-            <section className="card-section" id="ads">
+            {expandedChapters.ads && (
+              <>
+                <section className="card-section" id="ads">
               <div className="section-header">
                 <div className="section-num">09</div>
                 <div className="section-heading">
@@ -1482,11 +1800,20 @@ export default function LandingPage() {
                 </table>
               </div>
             </section>
+            </>
+            )}
 
             {/* CHAPTER 05 — TEAM OPS */}
-            <div className="chapter-title team-only">12–15 · Team Operations</div>
+            <div className="chapter-title team-only">
+              <span className="chapter-toggle" onClick={() => toggleChapter('team')} style={{ cursor: 'pointer', display: 'inline-block', marginRight: '8px' }}>
+                {expandedChapters.team ? '▼' : '▶'}
+              </span>
+              <span>12–15 · Team Operations</span>
+            </div>
 
-            <section className="card-section team-only" id="roles">
+            {expandedChapters.team && (
+              <>
+                <section className="card-section team-only" id="roles">
               <div className="section-header">
                 <div className="section-num">12</div>
                 <div className="section-heading">
@@ -1574,6 +1901,13 @@ export default function LandingPage() {
                   </div>
                   <p className="handoff-row-desc">Competitor Analysis, Social Media Management &amp; Community Engagement.</p>
                 </div>
+                <div className="handoff-row">
+                  <div className="handoff-row-top">
+                    <span className="handoff-row-name">Amr Ayyad</span>
+                    <span className="handoff-row-role">Backend Developer</span>
+                  </div>
+                  <p className="handoff-row-desc">Building scalable APIs, Structuring systems, Managing systems, Handling deployment and databasesolutions.</p>
+                </div>
               </div>
             </section>
 
@@ -1591,6 +1925,8 @@ export default function LandingPage() {
                 <div className="resource-item"><span>Database</span><span className="tag">[Notion / Airtable]</span></div>
               </div>
             </section>
+            </>
+            )}
 
           </div>
         </div>
