@@ -9,11 +9,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is already authenticated
-    const authStatus = localStorage.getItem('growthstation_auth');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-    }
+    // Always start with login page
     setIsLoading(false);
   }, []);
 
