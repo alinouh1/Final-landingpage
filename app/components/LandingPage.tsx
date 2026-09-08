@@ -1380,7 +1380,7 @@ export default function LandingPage() {
                   <tbody>
                     <tr><td>D-7</td><td>[Pre-launch teaser]</td><td>Reel 01</td><td>Organic</td></tr>
                     <tr><td>D-3</td><td>[The project's why / the problem we're solving]</td><td>Post 01</td><td>Organic</td></tr>
-                    <tr><td>D0</td><td>[Official launch announcement]</td><td>Hero + Post 02</td><td>Paid + Organic</td></tr>
+                    <tr><td>D0</td><td>[Official launch announcement]</td><td>Post 02</td><td>Paid + Organic</td></tr>
                     <tr><td>W1</td><td>[Social proof / first result]</td><td>Carousel 01</td><td>Paid + Organic</td></tr>
                     <tr><td>W2</td><td>[Addressing the most common objection]</td><td>Reel 02</td><td>Organic + Retargeting</td></tr>
                   </tbody>
@@ -1559,6 +1559,20 @@ export default function LandingPage() {
                     <span className="handoff-row-role">UI/UX Designer &amp; Developer</span>
                   </div>
                   <p className="handoff-row-desc">UI/UX designer for the website, and programmer of the website in all its details.</p>
+                </div>
+                <div className="handoff-row">
+                  <div className="handoff-row-top">
+                    <span className="handoff-row-name">Abdelrhman Essam</span>
+                    <span className="handoff-row-role">Graphic Designer</span>
+                  </div>
+                  <p className="handoff-row-desc">Visual Concept, Brand Design &amp; Creative Execution.</p>
+                </div>
+                <div className="handoff-row">
+                  <div className="handoff-row-top">
+                    <span className="handoff-row-name">Samar Ahmed</span>
+                    <span className="handoff-row-role">Social Media Specialist &amp; Moderator</span>
+                  </div>
+                  <p className="handoff-row-desc">Competitor Analysis, Social Media Management &amp; Community Engagement.</p>
                 </div>
               </div>
             </section>
