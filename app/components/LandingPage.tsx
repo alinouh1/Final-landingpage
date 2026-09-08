@@ -287,25 +287,10 @@ const assetData = {
       number: '01', 
       type: 'Carousel 01', 
       date: 'W1',
-      goal: 'Education', 
-      stage: 'Consideration', 
-      audience: 'Genuinely interested', 
-      usage: 'Organic + Paid',
-      design: '[Card 1: cover & hook]\n[Card 2: the problem]\n[Card 3: the solution]\n[Card 4: result or proof]\n[Card 5: CTA]',
-      caption: '[Caption summarizing the carousel idea in two lines]\n\n[CTA — save it to come back to later]',
-      note: '[Internal note: client approves the copy before design starts]' 
-    },
-    { 
-      number: '02', 
-      type: 'Carousel 02', 
-      date: 'W2',
-      goal: 'Objection handling', 
-      stage: 'Consideration', 
-      audience: 'Hesitant', 
-      usage: 'Organic',
-      design: '[Card 1: the most common objection]\n[Card 2: the response, with numbers]\n[Card 3: CTA]',
-      caption: '[Caption that opens with a common question and answers it clearly]',
-      note: '' 
+      objective: 'Awareness & Educational',
+      design: 'slide 1: إزاي توصل من 10 آﻻف لـ 100 ألف متابع\nslide 2: ﺑﺠﺪ ! ﻫﻤﺎ ﻗﺎﻟﻮﻟﻚ إن الموﻀﻮع ﺑﺎﻟﺒﺴﺎﻃﺔ دي؟\nslide 3: اﻟﺤﻘﻴﻘﺔ إن دي ﺧﺪﻋﺔ ﻛﺒﻴﺮة . ﻟﻮ ﻛﺎﻧﺖ ﺑﺎﻟﺴﻬﻮﻟﺔ دي ، ﻛﺎن ﻛﻞ اﻟﻠﻲ وعنده درع اﻟﻤﻠﻴﻮن\n" إﻧﻔﻠﻮﻧﺴﺮ ﻣﺎﺷﻲ ﻓﻲ اﻟﺸﺎرع دﻟﻮﻗﺘﻲ ﺑﻘﻰ\nslide 4: ﺷﺮﻛﺎت اﻟﻤﺎرﻛﺘﻴﻨﺞ ﺑﺘﺒﻴﻌﻠﻚ اﻟﻮﻫﻢ ﺗﺤﺖ ﻣﺴﻤﻰ " اﻟﻨﻤﻮ اﻟﺴﺮﻳﻊ " ﺑﻴﻮﻫﻤﻮك إن ﻓﻴﻪ " زرار ﺳﺤﺮي " أو " ﺗﺮﻳﻜﺎﻳﺔ ﻣﻌﻴﻨﺔ " ﻫﺘﺨﻠﻲ ﺣﺴﺎﺑﻚ ﻳﻨﻔﺠﺮ ﻓﻲ أﺳﺒﻮع\nslide 5: اﻟﺤﻘﻴﻘﺔ اﻟﻤﺮة ؟ اﻟﻤﺘﺎﺑﻌﻴﻦ اﻟﻠﻲ ﺑﻴﻴﺠﻮا ﺑﻀﻐﻄﺔ زرار ﻫﻤﺎ اﻟﻠﻲ ﺑﻴﺪﻓﻨﻮا ﺣﺴﺎﺑﻚ ﻟﻸﺑﺪ . اﻟﺨﻮارزﻣﻴﺎت ﻣﺶ ﻏﺒﻴﺔ؛ ﻫﻲ ﺑﺘﺪور ﻋﲆ ﺗﻔﺎﻋﻞ ﺣﻘﻴﻘﻲ ﻣﺶ أرﻗﺎم ﻣﻴﺘﺔ\nslide 6: ﻟﻮ ﻋﺎﻳﺰ ﺗﻜﺒﺮ ﺑﺠﺪ وﺑﺸﻜﻞ ﻣﻨﻄﻘﻲ ؟ ف اﻟﻤﻌﺎدﻟﺔ ﺑﺴﻴﻄﺔ :\nقيمة حقيقية بتحل مشكلة ✅\nاستمرار مرضي لجمهورك ✅\nفهم دقيق لللي جمهورك محتاجه فعلاً مش اللي أنت عايز تقوله✅\nslide 7:\n   لو عايز تبني إمبراطورية مش مجرد رقم على الشاشة، بطّل تدور على السهل .. اعمل فولو لو عايز تعرف إزاي تبني جمهور حقيقي بيشتري منك مش بس ﺑﻴﺘﻔﺮج ﻋﻠﻴﻚ',
+      note: '[Internal note: client approves the copy before design starts]',
+      hasCustomLayout: true 
     },
   ],
   reels: [
@@ -317,9 +302,11 @@ const assetData = {
       stage: 'Awareness', 
       audience: 'Broad audience', 
       usage: 'Organic',
-      design: '[Short script: first two seconds are the hook, the middle is the idea, the end is the CTA]',
+      design: 'Stay Tuned ..',
       caption: '[Short caption that completes the idea visually]\n\n[CTA — follow us / share]',
-      note: '[Internal note: shoot in 9:16, natural lighting, max 20 seconds]' 
+      note: '',
+      hasCustomLayout: true,
+      reelLink: 'https://www.instagram.com/reels/Cous8R1uSPr/'
     },
     { 
       number: '02', 
@@ -331,7 +318,8 @@ const assetData = {
       usage: 'Organic + Retargeting',
       design: '[Script: addressing an objection in a light-hearted way]',
       caption: '[Caption that opens a discussion in the comments]',
-      note: '' 
+      note: '',
+      hasCustomLayout: false
     },
   ],
   video: [
@@ -345,7 +333,8 @@ const assetData = {
       usage: 'Paid + Organic',
       design: '[Full script: intro, story, solution, call to action]',
       caption: '[Main video caption, a bit longer, explains the story]',
-      note: '[Internal note: video length 45–60 seconds, 4K quality]' 
+      note: '[Internal note: video length 45–60 seconds, 4K quality]',
+      hasCustomLayout: false
     },
   ],
 };
@@ -789,8 +778,12 @@ export default function LandingPage() {
                     if (item.hasCustomLayout) {
                       if (item.type === 'Post 01') {
                         text = `${item.type} — ${item.date}\nobjective: ${item.objective}\nTOV: ${item.tov}\n\nCaption:\n${item.customCaption}`;
-                      } else {
+                      } else if (item.type === 'Carousel 01') {
+                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\n\nDesign Text:\n${item.design}`;
+                      } else if (item.type === 'Post 02') {
                         text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}`;
+                      } else if (item.type === 'Reel 01') {
+                        text = `${item.type} — ${item.date}\nCaption:\n${item.design}\n\nReel Link:\n${item.reelLink}`;
                       }
                     } else {
                       text = `${item.type} — ${item.date}\nGoal: ${item.goal}\nStage: ${item.stage}\nAudience: ${item.audience}\n\nDesign Text:\n${item.design}\n\nFinal Caption:\n${item.caption}`;
@@ -832,6 +825,69 @@ export default function LandingPage() {
                         </div>
                       </div>
                     </>
+                  ) : item.type === 'Reel 01' ? (
+                    <>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Caption</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="design" 
+                            type="button"
+                            onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Watch Reel</span>
+                        </div>
+                        <div className="asset-text-body">
+                          <a 
+                            href={item.reelLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ 
+                              color: '#0d6efd', 
+                              textDecoration: 'underline',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            Open Instagram Reel
+                          </a>
+                        </div>
+                      </div>
+                    </>
+                  ) : item.type === 'Carousel 01' ? (
+                    <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">objective</div>
+                          <div className="asset-meta-value">{item.objective}</div>
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Design Text</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="design" 
+                            type="button"
+                            onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="asset-meta-row">
@@ -869,56 +925,85 @@ export default function LandingPage() {
                 </>
               ) : (
                 <>
-                  <div className="asset-meta-row">
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">Goal</div>
-                      <div className="asset-meta-value">{item.goal}</div>
-                    </div>
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">Stage</div>
-                      <div className="asset-meta-value">{item.stage}</div>
-                    </div>
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">Audience</div>
-                      <div className="asset-meta-value">{item.audience}</div>
-                    </div>
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">Usage</div>
-                      <div className="asset-meta-value">{item.usage}</div>
-                    </div>
-                  </div>
-                  <div className="asset-text-box">
-                    <div className="asset-text-label">
-                      <span>Design Text</span>
-                      <button 
-                        className="mini-copy" 
-                        data-field="design" 
-                        type="button"
-                        onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
-                      >
-                        Copy
-                      </button>
-                    </div>
-                    <div className="asset-text-body">
-                      {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                    </div>
-                  </div>
-                  <div className="asset-text-box">
-                    <div className="asset-text-label">
-                      <span>Final Caption</span>
-                      <button 
-                        className="mini-copy" 
-                        data-field="caption" 
-                        type="button"
-                        onClick={(e) => copyText(item.caption, e.currentTarget, 'Copied')}
-                      >
-                        Copy
-                      </button>
-                    </div>
-                    <div className="asset-text-body">
-                      {item.caption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                    </div>
-                  </div>
+                  {item.hasCustomLayout ? (
+                    <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">objective</div>
+                          <div className="asset-meta-value">{item.objective}</div>
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Design Text</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="design" 
+                            type="button"
+                            onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">Goal</div>
+                          <div className="asset-meta-value">{item.goal}</div>
+                        </div>
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">Stage</div>
+                          <div className="asset-meta-value">{item.stage}</div>
+                        </div>
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">Audience</div>
+                          <div className="asset-meta-value">{item.audience}</div>
+                        </div>
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">Usage</div>
+                          <div className="asset-meta-value">{item.usage}</div>
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Design Text</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="design" 
+                            type="button"
+                            onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Final Caption</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="caption" 
+                            type="button"
+                            onClick={(e) => copyText(item.caption, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.caption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </>
               )}
               {item.note && <div className="asset-note team-only">{item.note}</div>}
