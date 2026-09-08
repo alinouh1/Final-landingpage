@@ -80,7 +80,7 @@ const chapters = [
     title: 'Ready-to-Execute Content', 
     icon: 'fa-layer-group', 
     items: [
-      { id: 'statics', num: '05', label: 'Static', icon: 'fa-image' },
+      { id: 'statics', num: '05', label: 'Post', icon: 'fa-image' },
       { id: 'carousels', num: '06', label: 'Carousel', icon: 'fa-images' },
       { id: 'reels', num: '07', label: 'Reel', icon: 'fa-film' },
       { id: 'video', num: '08', label: 'Hero Video', icon: 'fa-video' },
@@ -251,31 +251,31 @@ const assetData = {
   statics: [
     { 
       number: '01', 
-      type: 'Static 01', 
+      type: 'Post 01', 
       date: 'D-3',
       goal: 'Awareness', 
       stage: 'Awareness', 
       audience: 'General audience', 
       usage: 'Organic + Paid seed',
-      design: '[Headline — one strong line]\n[Supporting line clarifying the idea]',
-      caption: '[Short caption that opens with a question or attention-grabbing line]\n\n[CTA — comment, save, or share]',
-      note: '[Internal note for the team: not visible to the client]' 
+      design: '[Image placeholder: هنا هنعمل مكان لصوره هنخطها بعدين]',
+      caption: 'Caption: Our Slogan',
+      note: 'TOV: Your success partner should be Growth Station' 
     },
     { 
       number: '02', 
-      type: 'Static 02', 
+      type: 'Post 02', 
       date: 'D0',
       goal: 'Conversion', 
       stage: 'Launch', 
       audience: 'Interested audience', 
       usage: 'Paid',
-      design: '[Official launch announcement]\n[Offer details, if any]',
-      caption: '[Launch caption — clear and direct]\n\n[CTA — get in touch / register your interest]',
-      note: '[Internal note: publish in sync with paid campaign activation]' 
+      design: '[Image placeholder: هنا هيبقي مكان لصوره بردوا]',
+      caption: 'Caption: تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين',
+      note: 'IN: تنشر قبل العيد ب كذا يوم | TOV: بعد العيد' 
     },
     { 
       number: '03', 
-      type: 'Static 03', 
+      type: 'Post 03', 
       date: 'W1',
       goal: 'Trust', 
       stage: 'Consideration', 
@@ -356,7 +356,7 @@ const assetData = {
 
 const checklistData = [
   '[Client approves positioning and tone of voice]',
-  '[Prepare and approve all Static and Carousel assets]',
+  '[Prepare and approve all Post and Carousel assets]',
   '[Film and edit the Reels and Hero Video]',
   '[Set up and test Tracking (Pixel / GA4)]',
   '[Replace any placeholder number or link with real data]',
@@ -1068,8 +1068,8 @@ export default function LandingPage() {
                   <thead><tr><th>Timing</th><th>Idea</th><th>Asset</th><th>Spend</th></tr></thead>
                   <tbody>
                     <tr><td>D-7</td><td>[Pre-launch teaser]</td><td>Reel 01</td><td>Organic</td></tr>
-                    <tr><td>D-3</td><td>[The project's why / the problem we're solving]</td><td>Static 01</td><td>Organic</td></tr>
-                    <tr><td>D0</td><td>[Official launch announcement]</td><td>Hero + Static 02</td><td>Paid + Organic</td></tr>
+                    <tr><td>D-3</td><td>[The project's why / the problem we're solving]</td><td>Post 01</td><td>Organic</td></tr>
+                    <tr><td>D0</td><td>[Official launch announcement]</td><td>Hero + Post 02</td><td>Paid + Organic</td></tr>
                     <tr><td>W1</td><td>[Social proof / first result]</td><td>Carousel 01</td><td>Paid + Organic</td></tr>
                     <tr><td>W2</td><td>[Addressing the most common objection]</td><td>Reel 02</td><td>Organic + Retargeting</td></tr>
                   </tbody>
@@ -1084,7 +1084,7 @@ export default function LandingPage() {
               <div className="section-header">
                 <div className="section-num">05</div>
                 <div className="section-heading">
-                  <h3>Static</h3>
+                  <h3>Post</h3>
                   <p>Full brief for every post: goal, audience, copy, and caption</p>
                 </div>
               </div>

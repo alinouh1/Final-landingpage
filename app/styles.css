@@ -1485,7 +1485,7 @@ tr:nth-child(even) td {
   background: rgba(150, 205, 176, .04);
 }
 
-/* ============ ASSET CHAPTERS (Static/Carousel/Reel/Video) ============ */
+/* ============ ASSET CHAPTERS (Post/Carousel/Reel/Video) ============ */
 .asset-toolbar {
   display: flex;
   justify-content: space-between;
