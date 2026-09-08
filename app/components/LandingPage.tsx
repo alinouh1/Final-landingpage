@@ -354,6 +354,36 @@ const assetData = {
       objective: 'Educational',
       scriptLink: 'https://docs.google.com/document/d/1EVPHiatS6hquICoNSvr5MhBAWpA_Ac_6ka7fUT0RDYU/edit?tab=t.0'
     },
+    { 
+      number: '05', 
+      type: 'Reel 05', 
+      date: 'W5',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'ﺗﻔﺘﻜﺮ ﻟﻴﻪ Gen_Z ﻋﺎﻣﻠﻴﻦ ﻣﺸﺎﻛﻞ ﻓﻲ اﻟﺸﻐﻞ ؟',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      objective: 'Educational',
+      scriptLink: 'https://docs.google.com/document/d/1ELj9kru61xYtjYnQssJdlrA7gisXHlhoGxh-V7OJkN8/edit?tab=t.0'
+    },
+    { 
+      number: '06', 
+      type: 'Reel 06', 
+      date: 'W6',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'اﻟﺴﻮق ﺑﻘﻰ زﺣﻤﺔ ؟\nاﻟﻜﻞ ﺑﻴﻘﻠﺪ ﺑﻌﻀﻪ ؟\nﻫﻘﻮﻟﻚ إزاي ﺗﺨﺮج ﺑﺮا اﻟﺰﺣﻤﺔ دي ﻓﻲ 60 ﺛﺎﻧﻴﺔ',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      objective: 'Educational',
+      scriptLink: 'https://docs.google.com/document/d/1zGs6X3s1Itd70Jb0ZcCGTTyho4U7Q-Ww0DgyBOTBYuQ/edit?tab=t.0'
+    },
   ],
   video: [
     { 
