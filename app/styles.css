@@ -1547,6 +1547,32 @@ tr:nth-child(even) td {
   border-radius: 10px;
 }
 
+.reel-link-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #E1306C 0%, #C13584 100%);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(225, 48, 108, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.reel-link-button:hover {
+  background: linear-gradient(135deg, #C13584 0%, #833AB4 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.4);
+}
+
+.reel-link-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(225, 48, 108, 0.3);
+}
+
 .asset-card {
   flex: 0 0 90%;
   scroll-snap-align: start;

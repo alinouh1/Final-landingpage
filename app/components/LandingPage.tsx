@@ -852,13 +852,9 @@ export default function LandingPage() {
                             href={item.reelLink} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            style={{ 
-                              color: '#0d6efd', 
-                              textDecoration: 'underline',
-                              cursor: 'pointer'
-                            }}
+                            className="reel-link-button"
                           >
-                            Open Instagram Reel
+                            📱 Open Instagram Reel
                           </a>
                         </div>
                       </div>
