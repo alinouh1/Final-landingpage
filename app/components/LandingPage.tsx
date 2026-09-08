@@ -332,12 +332,12 @@ const assetData = {
       stage: 'Consideration', 
       audience: 'Active follower', 
       usage: 'Organic + Retargeting',
-      design: 'Stay Tuned ..',
+      design: 'اﻟﻤﺎرﻛﺘﻨﺞ ﻓﻲ ﻣﺼﺮ ﻣﺶ رﻓﺎﻫﻴﺔ ! ده " أداة ﺑﻘﺎء "\nواﻟﺘﺴﻮﻳﻖ اﻟﺼﺢ ﻫﻮ اﻟﻠﻲ ﺑﻴﺤﻮل اﻟﺰﺣﻤﺔ ﻟﻔﺮص ، واﻟﻤﻨﺎﻓﺴﺔ ﻟﺴﻴﻄﺮة',
       caption: '[Caption that opens a discussion in the comments]',
       note: '',
       hasCustomLayout: true,
-      objective: 'Awareness',
-      reelLink: 'https://www.instagram.com/reels/'
+      objective: 'Educational & Awareness',
+      scriptLink: 'https://docs.google.com/document/d/1uGEj0n3pvINcVe2dYBTKv52enpru8bzicT9mlptnIqM/edit?tab=t.0'
     },
     { 
       number: '04', 
