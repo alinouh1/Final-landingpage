@@ -307,7 +307,8 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Awareness',
-      reelLink: 'https://www.instagram.com/reels/Cous8R1uSPr/'
+      reelLink: 'https://www.instagram.com/reels/Cous8R1uSPr/',
+      isEidLayout: false
     },
     { 
       number: '02', 
@@ -322,7 +323,8 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Awareness',
-      scriptLink: 'https://docs.google.com/document/d/1TbTe-yyqFmNc_w6xfLLZ_hQTbaI4XugRUM5cmRtvzCs/edit?pli=1&tab=t.0'
+      scriptLink: 'https://docs.google.com/document/d/1TbTe-yyqFmNc_w6xfLLZ_hQTbaI4XugRUM5cmRtvzCs/edit?pli=1&tab=t.0',
+      isEidLayout: false
     },
     { 
       number: '03', 
@@ -337,7 +339,8 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Educational & Awareness',
-      scriptLink: 'https://docs.google.com/document/d/1uGEj0n3pvINcVe2dYBTKv52enpru8bzicT9mlptnIqM/edit?tab=t.0'
+      scriptLink: 'https://docs.google.com/document/d/1uGEj0n3pvINcVe2dYBTKv52enpru8bzicT9mlptnIqM/edit?tab=t.0',
+      isEidLayout: false
     },
     { 
       number: '04', 
@@ -352,7 +355,8 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Educational',
-      scriptLink: 'https://docs.google.com/document/d/1EVPHiatS6hquICoNSvr5MhBAWpA_Ac_6ka7fUT0RDYU/edit?tab=t.0'
+      scriptLink: 'https://docs.google.com/document/d/1EVPHiatS6hquICoNSvr5MhBAWpA_Ac_6ka7fUT0RDYU/edit?tab=t.0',
+      isEidLayout: false
     },
     { 
       number: '05', 
@@ -367,7 +371,8 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Educational',
-      scriptLink: 'https://docs.google.com/document/d/1ELj9kru61xYtjYnQssJdlrA7gisXHlhoGxh-V7OJkN8/edit?tab=t.0'
+      scriptLink: 'https://docs.google.com/document/d/1ELj9kru61xYtjYnQssJdlrA7gisXHlhoGxh-V7OJkN8/edit?tab=t.0',
+      isEidLayout: false
     },
     { 
       number: '06', 
@@ -382,7 +387,40 @@ const assetData = {
       note: '',
       hasCustomLayout: true,
       objective: 'Educational',
-      scriptLink: 'https://docs.google.com/document/d/1zGs6X3s1Itd70Jb0ZcCGTTyho4U7Q-Ww0DgyBOTBYuQ/edit?tab=t.0'
+      scriptLink: 'https://docs.google.com/document/d/1zGs6X3s1Itd70Jb0ZcCGTTyho4U7Q-Ww0DgyBOTBYuQ/edit?tab=t.0',
+      isEidLayout: false
+    },
+    { 
+      number: '07', 
+      type: 'Reel 07', 
+      date: 'W7',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'ﻋﻴﺪﻛﻢ ﻣﺒﺎرك\nأﻋﺎده ﷲ ﻋﻠﻴﻨﺎ وﻋﻠﻴﻜﻢ ﺑﺎﻟﻴﻤﻦ واﻟﺒﺮﻛﺎت',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      in: 'ﻧﺒﺪل ﺷﺨﺼﻴﺔ اﻟﺮاﺟﻞ ﺑﺎﻟﻜﺎرﻛﺘﺮ ﺑﺘﺎﻋﻨﺎ',
+      tov: 'ﻋﻴﺪ أﺿﺤﻲ ﻣﺒﺎرك | Image placeholder: هنا هحط image',
+      isEidLayout: true
+    },
+    { 
+      number: '08', 
+      type: 'Reel 08', 
+      date: 'W8',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'إﻧﺴﻰ ﻛﻮرﺳﺎت اﻟﻤﺎرﻛﺘﻨﺞ ..\nاﻟﻔﺮاﻋﻨﺔ ﻫﻢ اﻟﻠﻲ اﺧﺘﺮﻋﻮا اﻟـ Viral Content',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      objective: 'Educational',
+      scriptLink: 'https://docs.google.com/document/d/1tUPLPn-aXY6hJnhSLLLzq-MUGzZsP9I101H_DLmsLpo/edit?tab=t.0',
+      isEidLayout: false
     },
   ],
   video: [
@@ -846,12 +884,16 @@ export default function LandingPage() {
                       } else if (item.type === 'Post 02') {
                         text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}`;
                       } else if (item.type.startsWith('Reel')) {
-                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\n\nCaption:\n${item.design}`;
-                        if (item.scriptLink) {
-                          text += `\n\nScript Link:\n${item.scriptLink}`;
-                        }
-                        if (item.reelLink) {
-                          text += `\n\nReel Link:\n${item.reelLink}`;
+                        if (item.isEidLayout) {
+                          text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.design}`;
+                        } else {
+                          text = `${item.type} — ${item.date}\nobjective: ${item.objective}\n\nCaption:\n${item.design}`;
+                          if (item.scriptLink) {
+                            text += `\n\nScript Link:\n${item.scriptLink}`;
+                          }
+                          if (item.reelLink) {
+                            text += `\n\nReel Link:\n${item.reelLink}`;
+                          }
                         }
                       }
                     } else {
@@ -896,61 +938,98 @@ export default function LandingPage() {
                     </>
                   ) : item.type.startsWith('Reel') ? (
                     <>
-                      <div className="asset-meta-row">
-                        <div className="asset-meta">
-                          <div className="asset-meta-label">objective</div>
-                          <div className="asset-meta-value">{item.objective}</div>
-                        </div>
-                      </div>
-                      <div className="asset-text-box">
-                        <div className="asset-text-label">
-                          <span>Caption</span>
-                          <button 
-                            className="mini-copy" 
-                            data-field="design" 
-                            type="button"
-                            onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
-                          >
-                            Copy
-                          </button>
-                        </div>
-                        <div className="asset-text-body">
-                          {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                        </div>
-                      </div>
-                      {item.scriptLink && (
-                        <div className="asset-text-box">
-                          <div className="asset-text-label">
-                            <span>SCRIPT</span>
+                      {item.isEidLayout ? (
+                        <>
+                          <div className="asset-meta-row">
+                            <div className="asset-meta">
+                              <div className="asset-meta-label">IN</div>
+                              <div className="asset-meta-value">{item.in}</div>
+                            </div>
                           </div>
-                          <div className="asset-text-body">
-                            <a 
-                              href={item.scriptLink} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="reel-link-button"
-                            >
-                              📄 Open Google Docs Script
-                            </a>
+                          <div className="asset-text-box">
+                            <div className="asset-text-label">
+                              <span>TOV</span>
+                            </div>
+                            <div className="asset-text-body">
+                              {item.tov.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                            </div>
                           </div>
-                        </div>
-                      )}
-                      {item.reelLink && (
-                        <div className="asset-text-box">
-                          <div className="asset-text-label">
-                            <span>Watch Reel</span>
+                          <div className="asset-text-box">
+                            <div className="asset-text-label">
+                              <span>Caption</span>
+                              <button 
+                                className="mini-copy" 
+                                data-field="design" 
+                                type="button"
+                                onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                              >
+                                Copy
+                              </button>
+                            </div>
+                            <div className="asset-text-body">
+                              {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                            </div>
                           </div>
-                          <div className="asset-text-body">
-                            <a 
-                              href={item.reelLink} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="reel-link-button"
-                            >
-                              📱 Open Instagram Reel
-                            </a>
+                        </>
+                      ) : (
+                        <>
+                          <div className="asset-meta-row">
+                            <div className="asset-meta">
+                              <div className="asset-meta-label">objective</div>
+                              <div className="asset-meta-value">{item.objective}</div>
+                            </div>
                           </div>
-                        </div>
+                          <div className="asset-text-box">
+                            <div className="asset-text-label">
+                              <span>Caption</span>
+                              <button 
+                                className="mini-copy" 
+                                data-field="design" 
+                                type="button"
+                                onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                              >
+                                Copy
+                              </button>
+                            </div>
+                            <div className="asset-text-body">
+                              {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                            </div>
+                          </div>
+                          {item.scriptLink && (
+                            <div className="asset-text-box">
+                              <div className="asset-text-label">
+                                <span>SCRIPT</span>
+                              </div>
+                              <div className="asset-text-body">
+                                <a 
+                                  href={item.scriptLink} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="reel-link-button"
+                                >
+                                  📄 Open Google Docs Script
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                          {item.reelLink && (
+                            <div className="asset-text-box">
+                              <div className="asset-text-label">
+                                <span>Watch Reel</span>
+                              </div>
+                              <div className="asset-text-body">
+                                <a 
+                                  href={item.reelLink} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="reel-link-button"
+                                >
+                                  📱 Open Instagram Reel
+                                </a>
+                              </div>
+                            </div>
+                          )}
+                        </>
                       )}
                     </>
                   ) : item.type === 'Carousel 01' ? (
