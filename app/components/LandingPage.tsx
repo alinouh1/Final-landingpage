@@ -306,6 +306,7 @@ const assetData = {
       caption: '[Short caption that completes the idea visually]\n\n[CTA — follow us / share]',
       note: '',
       hasCustomLayout: true,
+      objective: 'Awareness',
       reelLink: 'https://www.instagram.com/reels/Cous8R1uSPr/'
     },
     { 
@@ -316,10 +317,42 @@ const assetData = {
       stage: 'Consideration', 
       audience: 'Active follower', 
       usage: 'Organic + Retargeting',
-      design: '[Script: addressing an objection in a light-hearted way]',
+      design: 'لو انت اللي بتكتب وتصور وتعمل المونتاچ ؟\nيبقي أكيد فيه حاجة غلط ..\nخليها علينا وإدي العيش لخبازه\nلإن كل اللي براندك محتاجه — موجود في مكان واحد',
       caption: '[Caption that opens a discussion in the comments]',
       note: '',
-      hasCustomLayout: false
+      hasCustomLayout: true,
+      objective: 'Awareness',
+      scriptLink: 'https://docs.google.com/document/d/1TbTe-yyqFmNc_w6xfLLZ_hQTbaI4XugRUM5cmRtvzCs/edit?pli=1&tab=t.0'
+    },
+    { 
+      number: '03', 
+      type: 'Reel 03', 
+      date: 'W3',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'Stay Tuned ..',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      objective: 'Awareness',
+      reelLink: 'https://www.instagram.com/reels/'
+    },
+    { 
+      number: '04', 
+      type: 'Reel 04', 
+      date: 'W4',
+      goal: 'Engagement', 
+      stage: 'Consideration', 
+      audience: 'Active follower', 
+      usage: 'Organic + Retargeting',
+      design: 'Stay Tuned ..',
+      caption: '[Caption that opens a discussion in the comments]',
+      note: '',
+      hasCustomLayout: true,
+      objective: 'Awareness',
+      reelLink: 'https://www.instagram.com/reels/'
     },
   ],
   video: [
@@ -782,8 +815,14 @@ export default function LandingPage() {
                         text = `${item.type} — ${item.date}\nobjective: ${item.objective}\n\nDesign Text:\n${item.design}`;
                       } else if (item.type === 'Post 02') {
                         text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}`;
-                      } else if (item.type === 'Reel 01') {
-                        text = `${item.type} — ${item.date}\nCaption:\n${item.design}\n\nReel Link:\n${item.reelLink}`;
+                      } else if (item.type.startsWith('Reel')) {
+                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\n\nCaption:\n${item.design}`;
+                        if (item.scriptLink) {
+                          text += `\n\nScript Link:\n${item.scriptLink}`;
+                        }
+                        if (item.reelLink) {
+                          text += `\n\nReel Link:\n${item.reelLink}`;
+                        }
                       }
                     } else {
                       text = `${item.type} — ${item.date}\nGoal: ${item.goal}\nStage: ${item.stage}\nAudience: ${item.audience}\n\nDesign Text:\n${item.design}\n\nFinal Caption:\n${item.caption}`;
@@ -825,8 +864,14 @@ export default function LandingPage() {
                         </div>
                       </div>
                     </>
-                  ) : item.type === 'Reel 01' ? (
+                  ) : item.type.startsWith('Reel') ? (
                     <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">objective</div>
+                          <div className="asset-meta-value">{item.objective}</div>
+                        </div>
+                      </div>
                       <div className="asset-text-box">
                         <div className="asset-text-label">
                           <span>Caption</span>
@@ -843,21 +888,40 @@ export default function LandingPage() {
                           {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
                         </div>
                       </div>
-                      <div className="asset-text-box">
-                        <div className="asset-text-label">
-                          <span>Watch Reel</span>
+                      {item.scriptLink && (
+                        <div className="asset-text-box">
+                          <div className="asset-text-label">
+                            <span>SCRIPT</span>
+                          </div>
+                          <div className="asset-text-body">
+                            <a 
+                              href={item.scriptLink} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="reel-link-button"
+                            >
+                              📄 Open Google Docs Script
+                            </a>
+                          </div>
                         </div>
-                        <div className="asset-text-body">
-                          <a 
-                            href={item.reelLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="reel-link-button"
-                          >
-                            📱 Open Instagram Reel
-                          </a>
+                      )}
+                      {item.reelLink && (
+                        <div className="asset-text-box">
+                          <div className="asset-text-label">
+                            <span>Watch Reel</span>
+                          </div>
+                          <div className="asset-text-body">
+                            <a 
+                              href={item.reelLink} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="reel-link-button"
+                            >
+                              📱 Open Instagram Reel
+                            </a>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </>
                   ) : item.type === 'Carousel 01' ? (
                     <>
