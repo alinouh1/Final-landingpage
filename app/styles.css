@@ -1590,11 +1590,19 @@ tr:nth-child(even) td {
   border-radius: 18px;
   padding: 22px;
   scroll-margin-top: 280px;
-  transition: border-color .3s var(--ease);
+  transition: all .3s var(--ease);
+  cursor: pointer;
+}
+
+.asset-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 4px 16px rgba(150, 205, 176, .25);
+  transform: translateY(-2px);
 }
 
 .asset-card.highlighted {
   border-color: var(--sage);
+  box-shadow: 0 4px 16px rgba(150, 205, 176, .35);
 }
 
 .asset-card-head {
