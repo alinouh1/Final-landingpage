@@ -277,7 +277,11 @@ const assetData = {
       design: '[Image placeholder: هنا هيبقي مكان لصوره بردوا]',
       caption: 'Caption: تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين',
       note: 'IN: تنشر قبل العيد ب كذا يوم | TOV: بعد العيد',
-      hasCustomLayout: false
+      hasCustomLayout: true,
+      in: 'تنشر قبل العيد ب كذا يوم',
+      tov: 'بعد العيد',
+      reference: '[Image placeholder: هنا هحط image]',
+      customCaption: 'تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين'
     },
     { 
       number: '03', 
@@ -796,7 +800,16 @@ export default function LandingPage() {
                   className="asset-copy-btn" 
                   type="button"
                   onClick={(e) => {
-                    const text = `${item.type} — ${item.date}\nGoal: ${item.goal}\nStage: ${item.stage}\nAudience: ${item.audience}\n\nDesign Text:\n${item.design}\n\nFinal Caption:\n${item.caption}`;
+                    let text = '';
+                    if (item.hasCustomLayout) {
+                      if (item.type === 'Post 01') {
+                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\nTOV: ${item.tov}\n\nCaption:\n${item.customCaption}\n\nReference:\n${item.reference}`;
+                      } else {
+                        text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}\n\nReference:\n${item.reference}`;
+                      }
+                    } else {
+                      text = `${item.type} — ${item.date}\nGoal: ${item.goal}\nStage: ${item.stage}\nAudience: ${item.audience}\n\nDesign Text:\n${item.design}\n\nFinal Caption:\n${item.caption}`;
+                    }
                     copyText(text, e.currentTarget, 'Copied');
                   }}
                 >
@@ -805,40 +818,85 @@ export default function LandingPage() {
               </div>
               {item.hasCustomLayout ? (
                 <>
-                  <div className="asset-meta-row">
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">objective</div>
-                      <div className="asset-meta-value">{item.objective}</div>
-                    </div>
-                    <div className="asset-meta">
-                      <div className="asset-meta-label">TOV</div>
-                      <div className="asset-meta-value">{item.tov}</div>
-                    </div>
-                  </div>
-                  <div className="asset-text-box">
-                    <div className="asset-text-label">
-                      <span>Caption</span>
-                      <button 
-                        className="mini-copy" 
-                        data-field="customCaption" 
-                        type="button"
-                        onClick={(e) => copyText(item.customCaption, e.currentTarget, 'Copied')}
-                      >
-                        Copy
-                      </button>
-                    </div>
-                    <div className="asset-text-body">
-                      {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                    </div>
-                  </div>
-                  <div className="asset-text-box">
-                    <div className="asset-text-label">
-                      <span>Reference</span>
-                    </div>
-                    <div className="asset-text-body">
-                      {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                    </div>
-                  </div>
+                  {item.type === 'Post 01' ? (
+                    <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">objective</div>
+                          <div className="asset-meta-value">{item.objective}</div>
+                        </div>
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">TOV</div>
+                          <div className="asset-meta-value">{item.tov}</div>
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Caption</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="customCaption" 
+                            type="button"
+                            onClick={(e) => copyText(item.customCaption, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Reference</span>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="asset-meta-row">
+                        <div className="asset-meta">
+                          <div className="asset-meta-label">IN</div>
+                          <div className="asset-meta-value">{item.in}</div>
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>TOV</span>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.tov.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Caption</span>
+                          <button 
+                            className="mini-copy" 
+                            data-field="customCaption" 
+                            type="button"
+                            onClick={(e) => copyText(item.customCaption, e.currentTarget, 'Copied')}
+                          >
+                            Copy
+                          </button>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                      <div className="asset-text-box">
+                        <div className="asset-text-label">
+                          <span>Reference</span>
+                        </div>
+                        <div className="asset-text-body">
+                          {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </>
               ) : (
                 <>
