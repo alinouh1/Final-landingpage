@@ -259,7 +259,12 @@ const assetData = {
       usage: 'Organic + Paid seed',
       design: '[Image placeholder: هنا هنعمل مكان لصوره هنخطها بعدين]',
       caption: 'Caption: Our Slogan',
-      note: 'TOV: Your success partner should be Growth Station' 
+      note: 'TOV: Your success partner should be Growth Station',
+      objective: 'Awareness',
+      tov: 'Our Slogan',
+      reference: '[Image placeholder: هنا هحط image]',
+      customCaption: 'Your success partner should be',
+      hasCustomLayout: true
     },
     { 
       number: '02', 
@@ -271,7 +276,8 @@ const assetData = {
       usage: 'Paid',
       design: '[Image placeholder: هنا هيبقي مكان لصوره بردوا]',
       caption: 'Caption: تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين',
-      note: 'IN: تنشر قبل العيد ب كذا يوم | TOV: بعد العيد' 
+      note: 'IN: تنشر قبل العيد ب كذا يوم | TOV: بعد العيد',
+      hasCustomLayout: false
     },
     { 
       number: '03', 
@@ -283,7 +289,8 @@ const assetData = {
       usage: 'Organic + Paid Test',
       design: '[Social proof — a number or result]',
       caption: '[Caption showing the result with numbers or a real experience]',
-      note: '' 
+      note: '',
+      hasCustomLayout: false
     },
   ],
   carousels: [
@@ -796,56 +803,97 @@ export default function LandingPage() {
                   Copy All
                 </button>
               </div>
-              <div className="asset-meta-row">
-                <div className="asset-meta">
-                  <div className="asset-meta-label">Goal</div>
-                  <div className="asset-meta-value">{item.goal}</div>
-                </div>
-                <div className="asset-meta">
-                  <div className="asset-meta-label">Stage</div>
-                  <div className="asset-meta-value">{item.stage}</div>
-                </div>
-                <div className="asset-meta">
-                  <div className="asset-meta-label">Audience</div>
-                  <div className="asset-meta-value">{item.audience}</div>
-                </div>
-                <div className="asset-meta">
-                  <div className="asset-meta-label">Usage</div>
-                  <div className="asset-meta-value">{item.usage}</div>
-                </div>
-              </div>
-              <div className="asset-text-box">
-                <div className="asset-text-label">
-                  <span>Design Text</span>
-                  <button 
-                    className="mini-copy" 
-                    data-field="design" 
-                    type="button"
-                    onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
-                  >
-                    Copy
-                  </button>
-                </div>
-                <div className="asset-text-body">
-                  {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                </div>
-              </div>
-              <div className="asset-text-box">
-                <div className="asset-text-label">
-                  <span>Final Caption</span>
-                  <button 
-                    className="mini-copy" 
-                    data-field="caption" 
-                    type="button"
-                    onClick={(e) => copyText(item.caption, e.currentTarget, 'Copied')}
-                  >
-                    Copy
-                  </button>
-                </div>
-                <div className="asset-text-body">
-                  {item.caption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                </div>
-              </div>
+              {item.hasCustomLayout ? (
+                <>
+                  <div className="asset-meta-row">
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">objective</div>
+                      <div className="asset-meta-value">{item.objective}</div>
+                    </div>
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">TOV</div>
+                      <div className="asset-meta-value">{item.tov}</div>
+                    </div>
+                  </div>
+                  <div className="asset-text-box">
+                    <div className="asset-text-label">
+                      <span>Caption</span>
+                      <button 
+                        className="mini-copy" 
+                        data-field="customCaption" 
+                        type="button"
+                        onClick={(e) => copyText(item.customCaption, e.currentTarget, 'Copied')}
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div className="asset-text-body">
+                      {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                    </div>
+                  </div>
+                  <div className="asset-text-box">
+                    <div className="asset-text-label">
+                      <span>Reference</span>
+                    </div>
+                    <div className="asset-text-body">
+                      {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="asset-meta-row">
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">Goal</div>
+                      <div className="asset-meta-value">{item.goal}</div>
+                    </div>
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">Stage</div>
+                      <div className="asset-meta-value">{item.stage}</div>
+                    </div>
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">Audience</div>
+                      <div className="asset-meta-value">{item.audience}</div>
+                    </div>
+                    <div className="asset-meta">
+                      <div className="asset-meta-label">Usage</div>
+                      <div className="asset-meta-value">{item.usage}</div>
+                    </div>
+                  </div>
+                  <div className="asset-text-box">
+                    <div className="asset-text-label">
+                      <span>Design Text</span>
+                      <button 
+                        className="mini-copy" 
+                        data-field="design" 
+                        type="button"
+                        onClick={(e) => copyText(item.design, e.currentTarget, 'Copied')}
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div className="asset-text-body">
+                      {item.design.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                    </div>
+                  </div>
+                  <div className="asset-text-box">
+                    <div className="asset-text-label">
+                      <span>Final Caption</span>
+                      <button 
+                        className="mini-copy" 
+                        data-field="caption" 
+                        type="button"
+                        onClick={(e) => copyText(item.caption, e.currentTarget, 'Copied')}
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div className="asset-text-body">
+                      {item.caption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
+                    </div>
+                  </div>
+                </>
+              )}
               {item.note && <div className="asset-note team-only">{item.note}</div>}
             </div>
           ))}
