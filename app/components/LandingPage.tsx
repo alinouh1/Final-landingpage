@@ -261,8 +261,7 @@ const assetData = {
       caption: 'Caption: Our Slogan',
       note: 'TOV: Your success partner should be Growth Station',
       objective: 'Awareness',
-      tov: 'Our Slogan',
-      reference: '[Image placeholder: هنا هحط image]',
+      tov: 'Our Slogan | Image placeholder: هنا هحط image',
       customCaption: 'Your success partner should be',
       hasCustomLayout: true
     },
@@ -279,8 +278,7 @@ const assetData = {
       note: 'IN: تنشر قبل العيد ب كذا يوم | TOV: بعد العيد',
       hasCustomLayout: true,
       in: 'تنشر قبل العيد ب كذا يوم',
-      tov: 'بعد العيد',
-      reference: '[Image placeholder: هنا هحط image]',
+      tov: 'بعد العيد |  Image placeholder:',
       customCaption: 'تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين'
     },
     { 
@@ -803,9 +801,9 @@ export default function LandingPage() {
                     let text = '';
                     if (item.hasCustomLayout) {
                       if (item.type === 'Post 01') {
-                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\nTOV: ${item.tov}\n\nCaption:\n${item.customCaption}\n\nReference:\n${item.reference}`;
+                        text = `${item.type} — ${item.date}\nobjective: ${item.objective}\nTOV: ${item.tov}\n\nCaption:\n${item.customCaption}`;
                       } else {
-                        text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}\n\nReference:\n${item.reference}`;
+                        text = `${item.type} — ${item.date}\nIN: ${item.in}\n\nTOV:\n${item.tov}\n\nCaption:\n${item.customCaption}`;
                       }
                     } else {
                       text = `${item.type} — ${item.date}\nGoal: ${item.goal}\nStage: ${item.stage}\nAudience: ${item.audience}\n\nDesign Text:\n${item.design}\n\nFinal Caption:\n${item.caption}`;
@@ -846,14 +844,6 @@ export default function LandingPage() {
                           {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
                         </div>
                       </div>
-                      <div className="asset-text-box">
-                        <div className="asset-text-label">
-                          <span>Reference</span>
-                        </div>
-                        <div className="asset-text-body">
-                          {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                        </div>
-                      </div>
                     </>
                   ) : (
                     <>
@@ -885,14 +875,6 @@ export default function LandingPage() {
                         </div>
                         <div className="asset-text-body">
                           {item.customCaption.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
-                        </div>
-                      </div>
-                      <div className="asset-text-box">
-                        <div className="asset-text-label">
-                          <span>Reference</span>
-                        </div>
-                        <div className="asset-text-body">
-                          {item.reference.split('\n').map((l: string, i: number) => <p key={i}>{l}</p>)}
                         </div>
                       </div>
                     </>
