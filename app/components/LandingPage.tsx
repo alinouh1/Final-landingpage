@@ -281,19 +281,6 @@ const assetData = {
       tov: 'بعد العيد |  Image placeholder:',
       customCaption: 'تم تفعيل وضع : بعد العيد وكل سنة وانتم طيبين'
     },
-    { 
-      number: '03', 
-      type: 'Post 03', 
-      date: 'W1',
-      goal: 'Trust', 
-      stage: 'Consideration', 
-      audience: 'Comparison-stage audience', 
-      usage: 'Organic + Paid Test',
-      design: '[Social proof — a number or result]',
-      caption: '[Caption showing the result with numbers or a real experience]',
-      note: '',
-      hasCustomLayout: false
-    },
   ],
   carousels: [
     { 
