@@ -19,7 +19,6 @@ import {
   FaImage, 
   FaImages, 
   FaFilm, 
-  FaVideo, 
   FaChartLine, 
   FaBullhorn, 
   FaFilter, 
@@ -83,7 +82,6 @@ const chapters = [
       { id: 'statics', num: '05', label: 'Post', icon: 'fa-image' },
       { id: 'carousels', num: '06', label: 'Carousel', icon: 'fa-images' },
       { id: 'reels', num: '07', label: 'Reel', icon: 'fa-film' },
-      { id: 'video', num: '08', label: 'Hero Video', icon: 'fa-video' },
     ]
   },
   { 
@@ -423,21 +421,6 @@ const assetData = {
       isEidLayout: false
     },
   ],
-  video: [
-    { 
-      number: '01', 
-      type: 'Hero Video', 
-      date: 'D0',
-      goal: 'Brand story', 
-      stage: 'Launch', 
-      audience: 'Whole audience', 
-      usage: 'Paid + Organic',
-      design: '[Full script: intro, story, solution, call to action]',
-      caption: '[Main video caption, a bit longer, explains the story]',
-      note: '[Internal note: video length 45–60 seconds, 4K quality]',
-      hasCustomLayout: false
-    },
-  ],
 };
 
 const checklistData = [
@@ -461,7 +444,6 @@ function getIcon(iconName: string) {
     'fa-image': FaImage,
     'fa-images': FaImages,
     'fa-film': FaFilm,
-    'fa-video': FaVideo,
     'fa-chart-line': FaChartLine,
     'fa-bullhorn': FaBullhorn,
     'fa-filter': FaFilter,
@@ -525,7 +507,7 @@ export default function LandingPage() {
   const [activeSection, setActiveSection] = useState<string>('');
   const [activePillar, setActivePillar] = useState(0);
   const [activeTovSlide, setActiveTovSlide] = useState(0);
-  const [activeAsset, setActiveAsset] = useState({ statics: 0, carousels: 0, reels: 0, video: 0 });
+  const [activeAsset, setActiveAsset] = useState({ statics: 0, carousels: 0, reels: 0 });
   
   const sidebarRef = useRef<HTMLDivElement>(null);
   const pillarsScrollRef = useRef<HTMLDivElement>(null);
@@ -1440,17 +1422,6 @@ export default function LandingPage() {
                 </div>
               </div>
               {renderAssetChapter('reels', assetData.reels)}
-            </section>
-
-            <section className="card-section" id="video">
-              <div className="section-header">
-                <div className="section-num">08</div>
-                <div className="section-heading">
-                  <h3>Hero Video</h3>
-                  <p>The main video that opens the launch</p>
-                </div>
-              </div>
-              {renderAssetChapter('video', assetData.video)}
             </section>
 
             {/* CHAPTER 04 — PERFORMANCE */}
